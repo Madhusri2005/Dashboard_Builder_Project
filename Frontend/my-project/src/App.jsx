@@ -41,15 +41,15 @@ export default function App() {
   };
 
   const handleDeleteOrder = async (id) => {
-    // Note: You may need a @DeleteMapping in your OrderController for this
+ 
     setOrders((prev) => prev.filter((o) => o.id !== id));
-    // Implementation: fetch(`${API_BASE}/orders/${id}`, { method: 'DELETE' })
+   
   };
 
   const handleUpdateOrder = async (updatedOrder) => {
     try {
       await fetch(`${API_BASE}/orders`, {
-        method: "POST", // Spring Boot .save() handles both create and update
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedOrder),
       });
@@ -61,7 +61,6 @@ export default function App() {
     }
   };
 
-  // 3. LAYOUT PERSISTENCE: Save the drag-and-drop config
   const handleSetLayout = async (newLayout) => {
     setLayout(newLayout);
     try {

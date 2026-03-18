@@ -11,7 +11,7 @@ import lombok.Data;
 @Data // Use Lombok to handle Getters/Setters
 public class Order {
     @Id
-    private String id; // Matches "ORD-0001" format
+    private String id;
     private String custId;
     private String firstName;
     private String lastName;
@@ -22,7 +22,7 @@ public class Order {
     private String state;
     private String zip;
     private String orderDate;
-    private Double totalAmount; // For KPI calculations
+    private Double totalAmount; 
     private Integer qty;
     private Double unitPrice;
     private String status;

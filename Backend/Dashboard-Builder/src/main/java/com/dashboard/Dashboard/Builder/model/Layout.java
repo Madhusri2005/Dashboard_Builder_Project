@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 public class Layout {
     @Id
-    private Long id; // Matches Date.now() from Frontend
+    private Long id; 
     private Integer pos;
     private String name;
     private String title;

@@ -20,7 +20,7 @@ public class LayoutController {
 
     @PostMapping
     public void saveLayout(@RequestBody List<Layout> layouts) {
-        repository.deleteAll(); // Clears old layout to save the new one
+        repository.deleteAll(); 
         repository.saveAll(layouts);
     }
 }

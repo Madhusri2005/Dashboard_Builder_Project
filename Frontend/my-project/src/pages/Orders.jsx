@@ -1,65 +1,4 @@
-// import React, { useState } from 'react';
-// import { useOrders } from '../context/OrderContext';
-// import OrderModal from '../components/orders/OrderModal';
-// import { Plus, Trash2, Search } from 'lucide-react';
 
-// const Orders = () => {
-//   const { orders, deleteOrder } = useOrders();
-//   const [modalOpen, setModalOpen] = useState(false);
-
-//   return (
-//     <div className="p-8">
-//       <div className="flex justify-between items-center mb-8">
-//         <div>
-//           <h1 className="text-2xl font-bold text-gray-800">Customer Orders</h1>
-//           <p className="text-sm text-gray-400 mt-1">View and manage customer orders and details</p>
-//         </div>
-//         <button 
-//           onClick={() => setModalOpen(true)}
-//           className="bg-[#54bd95] text-white px-6 py-2.5 rounded-xl font-bold shadow-lg shadow-green-100 flex items-center gap-2"
-//         >
-//           <Plus size={18} /> Create Order
-//         </button>
-//       </div>
-
-//       <div className="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden">
-//         <div className="p-4 border-b border-gray-50 bg-gray-50/30 flex items-center gap-2">
-//           <Search size={18} className="text-gray-300" />
-//           <input type="text" placeholder="Search orders..." className="bg-transparent outline-none text-sm w-full" />
-//         </div>
-//         <table className="w-full text-left">
-//           <thead className="bg-[#54bd95] text-white">
-//             <tr>
-//               <th className="p-4 text-xs font-black uppercase tracking-widest">Customer</th>
-//               <th className="p-4 text-xs font-black uppercase tracking-widest">Product</th>
-//               <th className="p-4 text-xs font-black uppercase tracking-widest">Qty</th>
-//               <th className="p-4 text-xs font-black uppercase tracking-widest">Total</th>
-//               <th className="p-4 text-xs font-black uppercase tracking-widest text-center">Actions</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {orders.map(o => (
-//               <tr key={o.id} className="border-b border-gray-50 hover:bg-gray-50 transition">
-//                 <td className="p-4 text-sm font-bold text-gray-700">{o.firstName} {o.lastName}</td>
-//                 <td className="p-4 text-sm text-gray-500">{o.product}</td>
-//                 <td className="p-4 text-sm">{o.quantity}</td>
-//                 <td className="p-4 text-sm font-black text-[#54bd95]">${o.totalAmount}</td>
-//                 <td className="p-4 flex justify-center">
-//                   <button onClick={() => deleteOrder(o.id)} className="text-gray-300 hover:text-red-500 transition">
-//                     <Trash2 size={18} />
-//                   </button>
-//                 </td>
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       </div>
-//       <OrderModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
-//     </div>
-//   );
-// };
-
-// export default Orders;
 import { useState } from "react";
 
 export default function Orders({ orders, setOrders }) {
@@ -71,7 +10,6 @@ export default function Orders({ orders, setOrders }) {
     qty: 1, unitPrice: 0, status: "Pending", createdBy: "Mr. Michael Harris"
   });
 
-  // Rule: Total amount is read-only and auto-calculated
   const totalAmount = formData.qty * formData.unitPrice;
 
   const handleSubmit = (e) => {
